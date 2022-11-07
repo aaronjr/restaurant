@@ -17,7 +17,7 @@ const navList = [
     ['li', 'list-item', 'contact']
 ]
 
-export function build (){
+export function nav (){
     const container = document.querySelector('.container')
 
     // create 3 main sections

@@ -1,5 +1,5 @@
 import './style.css';
-import { build } from './load';
+import { nav } from './load';
 
 // import Icon from './icon.png';
 // Add the image to our existing div.
@@ -8,5 +8,6 @@ import { build } from './load';
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    build()
+    // build nav - from .load
+    nav()
 })
