@@ -4,4 +4,19 @@ import './style.css';
 // const myIcon = new Image();
 // myIcon.src = Icon;
 
-console.log("")
+import myName from './load';
+console.log(myName('Cody'))
+
+document.addEventListener('DOMContentLoaded', () => {
+    function component() {
+        const element = document.createElement('div');
+      
+        // use your function!
+        element.textContent = myName('Cody');
+        return element;
+      }
+      
+      const body = document.querySelector('body')
+      body.appendChild(component())
+      console.log(body)
+})
