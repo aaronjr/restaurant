@@ -110,13 +110,23 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
 
 /***/ }),
 
+/***/ "./src/changePage.js":
+/*!***************************!*\
+  !*** ./src/changePage.js ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"showPage\": () => (/* binding */ showPage)\n/* harmony export */ });\n/* harmony import */ var _loadHome__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./loadHome */ \"./src/loadHome.js\");\n/* harmony import */ var _loadContact__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./loadContact */ \"./src/loadContact.js\");\n/* harmony import */ var _loadMenu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./loadMenu */ \"./src/loadMenu.js\");\n\n\n\n\n// change which page loads in main content\n\nfunction showPage(page){\n    // find content\n    const content = document.querySelector('.content')\n\n    // remove each child to avoid duplication\n    if(content.lastChild){\n        content.remove(content.lastChild)\n    }\n\n    if(page == \"Home\"){\n        (0,_loadHome__WEBPACK_IMPORTED_MODULE_0__.home)()\n    }\n    else if(page == \"Contact\"){\n        (0,_loadContact__WEBPACK_IMPORTED_MODULE_1__.contact)()\n    }\n    else{\n        (0,_loadMenu__WEBPACK_IMPORTED_MODULE_2__.menu)()\n    }\n}\n\n//# sourceURL=webpack://restaurant/./src/changePage.js?");
+
+/***/ }),
+
 /***/ "./src/createElement.js":
 /*!******************************!*\
   !*** ./src/createElement.js ***!
   \******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"createEle\": () => (/* binding */ createEle)\n/* harmony export */ });\nfunction createEle(tag, className = \"\", text = \"\"){\n\n    let element = document.createElement(tag)\n    element.className = className\n    element.textContent = text\n    return element\n}\n\n//# sourceURL=webpack://restaurant/./src/createElement.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"createEle\": () => (/* binding */ createEle)\n/* harmony export */ });\n// create element with html tag, class and textContents\n\nfunction createEle(tag, className = \"\", text = \"\"){\n\n    let element = document.createElement(tag)\n    element.className = className\n    element.textContent = text\n    return element\n}\n\n//# sourceURL=webpack://restaurant/./src/createElement.js?");
 
 /***/ }),
 
@@ -126,17 +136,57 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _load__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./load */ \"./src/load.js\");\n\n\n\n// import Icon from './icon.png';\n// Add the image to our existing div.\n// const myIcon = new Image();\n// myIcon.src = Icon;\n\n\ndocument.addEventListener('DOMContentLoaded', () => {\n    // build nav - from .load\n    (0,_load__WEBPACK_IMPORTED_MODULE_1__.nav)()\n})\n\n//# sourceURL=webpack://restaurant/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _loadMain__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./loadMain */ \"./src/loadMain.js\");\n/* harmony import */ var _changePage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./changePage */ \"./src/changePage.js\");\n\n\n\n\n// import Icon from './icon.png';\n// Add the image to our existing div.\n// const myIcon = new Image();\n// myIcon.src = Icon;\n\n\ndocument.addEventListener('DOMContentLoaded', () => {\n    // build nav and main page layout - from .loadMain\n    (0,_loadMain__WEBPACK_IMPORTED_MODULE_1__.main)()\n    \n    // find list, add event listeners and load correct page\n    let list = document.querySelectorAll('.list-item')\n    list.forEach(item => {\n        item.addEventListener(\"click\", () => {\n            // pass through the wanted page\n            ;(0,_changePage__WEBPACK_IMPORTED_MODULE_2__.showPage)(item.textContent)\n        })\n    })\n\n})\n\n//# sourceURL=webpack://restaurant/./src/index.js?");
 
 /***/ }),
 
-/***/ "./src/load.js":
-/*!*********************!*\
-  !*** ./src/load.js ***!
-  \*********************/
+/***/ "./src/loadContact.js":
+/*!****************************!*\
+  !*** ./src/loadContact.js ***!
+  \****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"nav\": () => (/* binding */ nav)\n/* harmony export */ });\n/* harmony import */ var _createElement__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./createElement */ \"./src/createElement.js\");\n\n\nconst toCreate = [\n    [\"nav\", \"nav\"],\n    [\"div\", \"content\"],\n    [\"footer\", \"footer\"],\n]\n\nconst forNav = [\n    [\"h1\", 'logo', \"Restaurant\"],\n    [\"ul\", 'nav-list'],\n]\n\nconst navList = [\n    ['li', 'list-item', 'home'],\n    ['li', 'list-item', 'menu'],\n    ['li', 'list-item', 'contact']\n]\n\nfunction nav (){\n    const container = document.querySelector('.container')\n\n    // create 3 main sections\n    for(let element in toCreate){\n        container.appendChild(\n            (0,_createElement__WEBPACK_IMPORTED_MODULE_0__.createEle)(\n                toCreate[element][0],\n                toCreate[element][1],\n                toCreate[element][2]))\n    }\n\n    // create nav with logo and list\n    const nav = document.querySelector('.nav')\n    for(let element in forNav){\n        nav.appendChild(\n            (0,_createElement__WEBPACK_IMPORTED_MODULE_0__.createEle)(\n                forNav[element][0],\n                forNav[element][1],\n                forNav[element][2]))\n    }\n\n    // fill list\n    const list =  document.querySelector('.nav-list')\n    for(let element in navList){\n        list.appendChild(\n            (0,_createElement__WEBPACK_IMPORTED_MODULE_0__.createEle)(\n                navList[element][0],\n                navList[element][1],\n                navList[element][2]))\n    }\n}\n\n//# sourceURL=webpack://restaurant/./src/load.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"contact\": () => (/* binding */ contact)\n/* harmony export */ });\n// create home page\n\nfunction contact(){\n    console.log(\"contact!!!\")\n}\n\n//# sourceURL=webpack://restaurant/./src/loadContact.js?");
+
+/***/ }),
+
+/***/ "./src/loadHome.js":
+/*!*************************!*\
+  !*** ./src/loadHome.js ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"home\": () => (/* binding */ home)\n/* harmony export */ });\n// create home page\n\nfunction home(){\n    const content = document.querySelector('.content')\n}\n\n//# sourceURL=webpack://restaurant/./src/loadHome.js?");
+
+/***/ }),
+
+/***/ "./src/loadMain.js":
+/*!*************************!*\
+  !*** ./src/loadMain.js ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"main\": () => (/* binding */ main)\n/* harmony export */ });\n/* harmony import */ var _createElement__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./createElement */ \"./src/createElement.js\");\n/* harmony import */ var _loadNav__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./loadNav */ \"./src/loadNav.js\");\n\n\n\nconst toCreate = [\n    [\"nav\", \"nav\"],\n    [\"div\", \"content\"],\n    [\"footer\", \"footer\"],\n]\n\nfunction main (){\n    const container = document.querySelector('.container')\n\n    // create 3 main sections\n    for(let element in toCreate){\n        container.appendChild(\n            (0,_createElement__WEBPACK_IMPORTED_MODULE_0__.createEle)(\n                toCreate[element][0],\n                toCreate[element][1],\n                toCreate[element][2]))\n    }\n\n    (0,_loadNav__WEBPACK_IMPORTED_MODULE_1__.nav)()\n}\n\n//# sourceURL=webpack://restaurant/./src/loadMain.js?");
+
+/***/ }),
+
+/***/ "./src/loadMenu.js":
+/*!*************************!*\
+  !*** ./src/loadMenu.js ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"menu\": () => (/* binding */ menu)\n/* harmony export */ });\n// create home page\n\nfunction menu(){\n    console.log(\"menu!!!\")\n}\n\n//# sourceURL=webpack://restaurant/./src/loadMenu.js?");
+
+/***/ }),
+
+/***/ "./src/loadNav.js":
+/*!************************!*\
+  !*** ./src/loadNav.js ***!
+  \************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"nav\": () => (/* binding */ nav)\n/* harmony export */ });\n/* harmony import */ var _createElement__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./createElement */ \"./src/createElement.js\");\n\n\nconst forNav = [\n    [\"h1\", 'logo', \"Restaurant\"],\n    [\"ul\", 'nav-list'],\n]\n\nconst navList = [\n    ['li', 'list-item', 'Home'],\n    ['li', 'list-item', 'Menu'],\n    ['li', 'list-item', 'Contact']\n]\n\nfunction nav (){\n    // create nav with logo and list\n    const nav = document.querySelector('.nav')\n    for(let element in forNav){\n        nav.appendChild(\n            (0,_createElement__WEBPACK_IMPORTED_MODULE_0__.createEle)(\n                forNav[element][0],\n                forNav[element][1],\n                forNav[element][2]))\n    }\n\n    // fill list\n    const list =  document.querySelector('.nav-list')\n    for(let element in navList){\n        list.appendChild(\n            (0,_createElement__WEBPACK_IMPORTED_MODULE_0__.createEle)(\n                navList[element][0],\n                navList[element][1],\n                navList[element][2]))\n    }\n}\n\n//# sourceURL=webpack://restaurant/./src/loadNav.js?");
 
 /***/ })
 

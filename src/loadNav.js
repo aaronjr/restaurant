@@ -1,34 +1,17 @@
 import { createEle } from './createElement';
 
-const toCreate = [
-    ["nav", "nav"],
-    ["div", "content"],
-    ["footer", "footer"],
-]
-
 const forNav = [
     ["h1", 'logo', "Restaurant"],
     ["ul", 'nav-list'],
 ]
 
 const navList = [
-    ['li', 'list-item', 'home'],
-    ['li', 'list-item', 'menu'],
-    ['li', 'list-item', 'contact']
+    ['li', 'list-item', 'Home'],
+    ['li', 'list-item', 'Menu'],
+    ['li', 'list-item', 'Contact']
 ]
 
 export function nav (){
-    const container = document.querySelector('.container')
-
-    // create 3 main sections
-    for(let element in toCreate){
-        container.appendChild(
-            createEle(
-                toCreate[element][0],
-                toCreate[element][1],
-                toCreate[element][2]))
-    }
-
     // create nav with logo and list
     const nav = document.querySelector('.nav')
     for(let element in forNav){
