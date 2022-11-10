@@ -17,7 +17,7 @@ export function createImg(className, source, altText){
 }
 
 // create function to pass in array and where to append
-export function loop(array, where ){
+export function loop(array, where){
     for(let counter in array){
         where.append(
             createEle(

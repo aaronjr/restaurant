@@ -1,4 +1,4 @@
-import { createEle } from './createElement';
+import { createEle, loop } from './createElement';
 import {nav, footer} from './loadNav';
 
 const toCreate = [
@@ -10,14 +10,8 @@ const toCreate = [
 export function main (){
     const container = document.querySelector('.container')
 
-    // create 3 main sections
-    for(let element in toCreate){
-        container.appendChild(
-            createEle(
-                toCreate[element][0],
-                toCreate[element][1],
-                toCreate[element][2]))
-    }
+    // add list to container
+    loop(toCreate, container)
 
     // add nav and footer to page
     nav()

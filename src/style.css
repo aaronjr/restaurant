@@ -43,7 +43,7 @@ nav li{
   cursor: pointer;
 }
 
-li, h1{
+li, .title{
   align-self: center;
   list-style: none;
 }
@@ -52,8 +52,8 @@ li{
   font-size: large;
 }
 
-h1{
-  font-size: xx-large;
+.title{
+  margin: 30px;
 }
 
 .content{
@@ -68,7 +68,7 @@ h1{
   place-items: center;
 }
 .hero{
-  height: 450px;
+  height: 400px;
 }
 
 .textHolder{
@@ -134,24 +134,20 @@ iframe{
 .menuMain{
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
   flex-wrap: wrap;
+  gap:10px;
 
 }
 .box{
-  background-color: orange;
-  height: 80px;
+  min-height: 60px;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  padding:10px
+  padding:10px;
+  border-bottom: 1px solid black;
 }
 
-.boxed{
-  background-color: blue;
-  height: 80px;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  padding:10px
+.box:last-child{
+  border-bottom: none
 }

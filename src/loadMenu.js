@@ -28,7 +28,27 @@ export function menu(){
     ],[
         ['p','info','Corn Ribs Infused in Middle Eastern spices, black garlic, pilpelchuma & dill yogurt'],
         ['p','info-price','£5,45']
-    ]]
+    ],[
+        ['p','info','Lachmagine authentic flatbread with spiced vegan mince & pine- nut puree, topped with Yafo salad, fried aubergine and drizzled with ambe & tahini'],
+        ['p','info-price','£7,45']
+    ],[
+        ['p','info','Pan Fried Chestnut Mushrooms with black garlic, white wine, sweet pickled chilli, pistachio crumbs & micro coriander'],
+        ['p','info-price','£9,45']
+    ],[
+        ['p','info','Yafo Trayserved with seasoned pitta chips, tahini, preserved lemon mayo & tomato fil-fel h’arr'],
+        ['p','info-price','£3,45']
+    ],[
+        ['p','info','Siikh marinated vegan kebabs, served with roasted aubergine salad & tatbila dressing'],
+        ['p','info-price','£5,66']
+    ],[
+        ['p','info','Sambousek Middle Eastern pastry stuffed with Balkan cheese, kale & potato, served with beetroot puree & spiced pomegranate molasses'],
+        ['p','info-price','£12,45']
+    ]
+
+]
+    // add title to page
+    let title = createEle('h1', 'title', "Our small plates")
+    menuMain.append(title)
 
     // make as many boxes as needed
     for(let i in bigList){

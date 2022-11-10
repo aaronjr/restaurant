@@ -1,4 +1,4 @@
-import { createEle } from './createElement';
+import { createEle, loop } from './createElement';
 
 // create Nav
 // list to pass through createEle function
@@ -15,23 +15,11 @@ const navList = [
 export function nav (){
     // create nav with logo and list
     const nav = document.querySelector('.nav')
-    for(let element in forNav){
-        nav.appendChild(
-            createEle(
-                forNav[element][0],
-                forNav[element][1],
-                forNav[element][2]))
-    }
+    loop(forNav, nav)
 
     // fill list
     const list =  document.querySelector('.nav-list')
-    for(let element in navList){
-        list.appendChild(
-            createEle(
-                navList[element][0],
-                navList[element][1],
-                navList[element][2]))
-    }
+    loop(navList,list)
 }
 
 // create footer
@@ -47,21 +35,9 @@ const footList = [
 export function footer(){
     // create footer with info
     const footer = document.querySelector('.footer')
-    for(let element in forFoot){
-        footer.appendChild(
-            createEle(
-                forFoot[element][0],
-                forFoot[element][1],
-                forFoot[element][2]))
-    }
+    loop(forFoot, footer)
 
     // fill list
     const list =  document.querySelector('.foot-list')
-    for(let element in footList){
-        list.appendChild(
-            createEle(
-                footList[element][0],
-                footList[element][1],
-                footList[element][2]))
-    }
+    loop(footList, list)
 }

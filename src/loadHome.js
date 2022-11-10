@@ -1,4 +1,4 @@
-import { createEle } from './createElement';
+import { createEle, createImg, loop } from './createElement';
 import yafo from './Yafo.png'
 
 // create home page
@@ -8,30 +8,27 @@ const mainSections = [
 ]
 
 export function home(){
+    
     // find content section of page
     const content = document.querySelector('.content')
 
+    // make main container for homepage
     const homeContainer = createEle('div','homeContainer')
 
+    // add to home screen
     content.append(homeContainer)
 
-    // 
-    for(let element in mainSections){
-        homeContainer.appendChild(
-            createEle(
-                mainSections[element][0],
-                mainSections[element][1],
-                mainSections[element][2]))
-    }
+    // add sections to page
+    loop(mainSections, homeContainer)
 
+    // find these areas to add items
     let imgHolder = document.querySelector(".imgHolder")
     let textHolder = document.querySelector(".textHolder")
-    let img = new Image();
-    img.className = "hero"
-    img.src = yafo
-    // myIcon.src = Icon;
-    imgHolder.append(img)
 
+    // create and add main logo
+    imgHolder.append(createImg('hero', yafo, "YAFO logo"))
+
+    // add address
     let text = createEle("p", "textMain", "238 North Street \r\n Southville BS3 1JD")
     textHolder.append(text)
 }
