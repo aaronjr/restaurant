@@ -12,7 +12,7 @@ body{
 
 .container{
   width: 80vh;
-  height: 100%;
+  min-height: 100vh;
   display: grid;
   grid-template-rows: 80px 1fr 80px;
   position: relative;
@@ -43,6 +43,7 @@ li, h1{
 
 li{
   font-size: large;
+  cursor: pointer;
 }
 
 h1{
@@ -51,17 +52,30 @@ h1{
 
 .content{
   background-color:white;
-  
+  padding-bottom: 2.5rem;
   width:100%;
 }
 
+.imgHolder{
+  display: grid;
+  place-items: center;
+}
 .hero{
   height: 500px;
 }
 
+.textHolder{
+  text-align: center;
+  font-size: xx-large;
+}
+
+.textMain{
+  white-space: pre-line;
+}
+
 footer{
   background-color:rgb(145, 235, 145);
-  height: 50px;
+  height: 80px;
   width:100%;
   position: absolute;
   bottom: 0;

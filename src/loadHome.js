@@ -21,6 +21,10 @@ export function home(){
     }
 
     let imgHolder = document.querySelector(".imgHolder")
+    let textHolder = document.querySelector(".textHolder")
     let img = createImg("hero", "https://img.freepik.com/premium-vector/restaurant-logo-design-template_79169-56.jpg?w=1380" ,"main logo of restaurant")
     imgHolder.append(img)
+
+    let text = createEle("p", "textMain", "238 North Street \r\n Southville BS3 1JD")
+    textHolder.append(text)
 }
