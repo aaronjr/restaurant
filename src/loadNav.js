@@ -1,6 +1,7 @@
 import { createEle } from './createElement';
 
 // create Nav
+// list to pass through createEle function
 const forNav = [
     ["ul", 'nav-list'],
 ]
@@ -39,7 +40,6 @@ const forFoot = [
 ]
 
 const footList = [
-    ['li', 'list-item-foot', 'Created by Aaron Richards'],
     ['li', 'list-item-foot', '2022'],
     ['li', 'list-item-foot', 'aaronjr']
 ]

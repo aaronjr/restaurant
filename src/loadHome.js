@@ -1,5 +1,5 @@
 import { createEle } from './createElement';
-import { createImg } from './createElement';
+import yafo from './Yafo.png'
 
 // create home page
 const mainSections = [
@@ -11,9 +11,13 @@ export function home(){
     // find content section of page
     const content = document.querySelector('.content')
 
+    const homeContainer = createEle('div','homeContainer')
+
+    content.append(homeContainer)
+
     // 
     for(let element in mainSections){
-        content.appendChild(
+        homeContainer.appendChild(
             createEle(
                 mainSections[element][0],
                 mainSections[element][1],
@@ -22,7 +26,10 @@ export function home(){
 
     let imgHolder = document.querySelector(".imgHolder")
     let textHolder = document.querySelector(".textHolder")
-    let img = createImg("hero", "https://img.freepik.com/premium-vector/restaurant-logo-design-template_79169-56.jpg?w=1380" ,"main logo of restaurant")
+    let img = new Image();
+    img.className = "hero"
+    img.src = yafo
+    // myIcon.src = Icon;
     imgHolder.append(img)
 
     let text = createEle("p", "textMain", "238 North Street \r\n Southville BS3 1JD")

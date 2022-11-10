@@ -2,16 +2,10 @@ import './style.css';
 import {main} from './loadMain';
 import {showPage} from './changePage';
 
-// import Icon from './icon.png';
-// Add the image to our existing div.
-// const myIcon = new Image();
-// myIcon.src = Icon;
-
-
 document.addEventListener('DOMContentLoaded', () => {
     // build nav and main page layout - from .loadMain
     main()
-    showPage("Home")
+    showPage("Contact")
     
     // find list, add event listeners and load correct page
     let list = document.querySelectorAll('.list-item')
