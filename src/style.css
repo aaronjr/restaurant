@@ -131,4 +131,27 @@ iframe{
   height: 50%;
 }
 
+.menuMain{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
 
+}
+.box{
+  background-color: orange;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding:10px
+}
+
+.boxed{
+  background-color: blue;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding:10px
+}

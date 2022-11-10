@@ -5,7 +5,7 @@ import {showPage} from './changePage';
 document.addEventListener('DOMContentLoaded', () => {
     // build nav and main page layout - from .loadMain
     main()
-    showPage("Contact")
+    showPage("Menu")
     
     // find list, add event listeners and load correct page
     let list = document.querySelectorAll('.list-item')
