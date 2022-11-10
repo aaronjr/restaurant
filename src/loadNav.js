@@ -1,7 +1,6 @@
 import { createEle } from './createElement';
 
 const forNav = [
-    ["h1", 'logo', "Restaurant"],
     ["ul", 'nav-list'],
 ]
 

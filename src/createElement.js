@@ -7,3 +7,11 @@ export function createEle(tag, className = "", text = ""){
     element.textContent = text
     return element
 }
+
+export function createImg(className, source, altText){
+    const image = document.createElement('img')
+    image.src = source;
+    image.altText = altText;
+    image.className = className
+    return image
+}
