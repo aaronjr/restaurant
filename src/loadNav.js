@@ -1,5 +1,6 @@
 import { createEle } from './createElement';
 
+// create Nav
 const forNav = [
     ["ul", 'nav-list'],
 ]
@@ -29,5 +30,38 @@ export function nav (){
                 navList[element][0],
                 navList[element][1],
                 navList[element][2]))
+    }
+}
+
+// create footer
+const forFoot = [
+    ["ul", 'foot-list'],
+]
+
+const footList = [
+    ['li', 'list-item-foot', 'Created by Aaron Richards'],
+    ['li', 'list-item-foot', '2022'],
+    ['li', 'list-item-foot', 'aaronjr']
+]
+
+export function footer(){
+    // create footer with info
+    const footer = document.querySelector('.footer')
+    for(let element in forFoot){
+        footer.appendChild(
+            createEle(
+                forFoot[element][0],
+                forFoot[element][1],
+                forFoot[element][2]))
+    }
+
+    // fill list
+    const list =  document.querySelector('.foot-list')
+    for(let element in footList){
+        list.appendChild(
+            createEle(
+                footList[element][0],
+                footList[element][1],
+                footList[element][2]))
     }
 }

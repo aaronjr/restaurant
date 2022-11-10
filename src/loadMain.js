@@ -1,5 +1,5 @@
 import { createEle } from './createElement';
-import {nav} from './loadNav';
+import {nav, footer} from './loadNav';
 
 const toCreate = [
     ["nav", "nav"],
@@ -19,5 +19,7 @@ export function main (){
                 toCreate[element][2]))
     }
 
+    // add nav and footer to page
     nav()
+    footer()
 }

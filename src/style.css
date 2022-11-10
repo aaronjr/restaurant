@@ -19,7 +19,7 @@ body{
 }
 
 nav{
-  background-color:rgb(246, 136, 136);
+  background-color:whitesmoke;
   height: 80px;
   width:100%;
   display: flex;
@@ -61,7 +61,7 @@ h1{
   place-items: center;
 }
 .hero{
-  height: 500px;
+  height: 450px;
 }
 
 .textHolder{
@@ -74,9 +74,19 @@ h1{
 }
 
 footer{
-  background-color:rgb(145, 235, 145);
+  background-color:whitesmoke;
   height: 80px;
   width:100%;
   position: absolute;
   bottom: 0;
+}
+
+.foot-list{
+  display: flex;
+  justify-content: space-evenly;
+  height: 100%;
+  align-items: center;
+}
+.list-item-foot{
+  text-decoration: none;
 }
