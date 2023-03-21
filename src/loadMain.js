@@ -1,4 +1,4 @@
-import { createEle, loop } from './createElement';
+import { loop } from './createElement';
 import {nav, footer} from './loadNav';
 
 const toCreate = [

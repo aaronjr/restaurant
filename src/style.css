@@ -3,22 +3,20 @@
 *{
   margin: 0;
   padding: 0;
+  font-family: 'Allerta Stencil', sans-serif;
 }
 
 body{
   min-height: 100vh;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  font-family: 'Allerta Stencil', sans-serif;
 }
 
 .container{
-  width: 60vw;
   min-height: 100vh;
   display: grid;
   grid-template-rows: 80px 1fr 80px;
   position: relative;
+  justify-content: center;
+  grid-template-columns: minmax(300px, 1110px);
 }
 
 nav{
@@ -27,8 +25,8 @@ nav{
   width:100%;
   display: flex;
   flex-direction: column;
-  justify-content:center;
-  align-content: center;
+  justify-content: center;
+
 }
 nav ul{
   justify-self: flex-end;
@@ -36,7 +34,6 @@ nav ul{
   justify-content: space-evenly;
   align-content: start;
   gap:10px;
-  margin-top: 30px;
 }
 
 nav li{
@@ -58,22 +55,22 @@ li{
 
 .content{
   background-color:white;
-  padding-bottom: 2.5rem;
-  width:100%;
   display: flex;
 }
 
 .imgHolder{
   display: grid;
   place-items: center;
+  align-self: flex-end;
 }
 .hero{
-  height: 400px;
+  width: clamp(350px, 450px, 80%);
 }
 
 .textHolder{
-  text-align: center;
+  align-self: flex-start;
   font-size: xx-large;
+  padding-top: 1%;
 }
 
 .textMain{
@@ -81,11 +78,13 @@ li{
 }
 
 footer{
-  background-color:whitesmoke;
+  background-color: whitesmoke;
   height: 80px;
-  width:100%;
+  width: 100%;
+  max-width: 1110px;
   position: absolute;
   bottom: 0;
+  justify-self: center;
 }
 
 .foot-list{
@@ -111,9 +110,9 @@ footer{
 }
 
 .homeContainer{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+  display: grid;
+  place-items: center;
+  grid-template-rows: 1fr .5fr;
 }
 
 .contactMain{
@@ -126,7 +125,7 @@ footer{
 }
 
 iframe{
-  margin-top: 50px;
+  margin-top: 25px;
   width: 85%;
   height: 50%;
 }
@@ -137,7 +136,11 @@ iframe{
   justify-content: space-evenly;
   flex-wrap: wrap;
   gap:10px;
+  padding: 0px 5px;
 
+}
+.info-price{
+  text-align: right;
 }
 .box{
   min-height: 60px;
@@ -150,4 +153,26 @@ iframe{
 
 .box:last-child{
   border-bottom: none
+}
+
+@media screen and (min-width: 550px) {
+  .homeContainer{
+    grid-template-rows: 1fr .4fr;
+  }
+}
+
+@media screen and (min-width: 750px)
+{
+  .homeContainer
+  {
+    grid-template-rows: 1fr .35fr;
+  }
+}
+
+@media screen and (min-width: 950px)
+{
+  .homeContainer
+  {
+    grid-template-rows: 1fr .3fr;
+  }
 }

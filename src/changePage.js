@@ -2,9 +2,6 @@ import {home} from './loadHome';
 import {contact} from './loadContact';
 import {menu} from './loadMenu';
 
-// change which page loads in main content
-// file:///Users/AaronRichards_/code/repos/restaurant/dist/index.html
-
 export function showPage(page){
     // find content
     const content = document.querySelector('.content')
@@ -14,6 +11,7 @@ export function showPage(page){
         content.removeChild(content.lastChild)
     }
 
+    // load correct page
     if(page == "Home"){
         home()
     }

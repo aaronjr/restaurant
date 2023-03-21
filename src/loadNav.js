@@ -1,4 +1,4 @@
-import { createEle, loop } from './createElement';
+import { loop } from './createElement';
 
 // create Nav
 // list to pass through createEle function
